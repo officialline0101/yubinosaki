@@ -242,10 +242,10 @@
     <div class="container">
         <h1>ゆびノさき<br>アンケート</h1>
         <div class="info-text">以下全て入力後<br>【アンケート送信】ボタンを押してください。</div>
-        <div class="label">お名前フルネームで教えてください<br>（例　大阪　太郎　オオサカ　タロウ）</div>
+        <div class="label">お名前フルネームで教えてください<br>（例　大阪　太郎　おおさか　たろう）</div>
         <textarea id="message" rows="1" placeholder="入力してください"></textarea> <!-- メッセージ入力フィールド -->
 
-        <div class="label">お電話を教えてください。<br>（ハイフン入れてお願いします。）</div>
+        <div class="label">お電話を教えてください。<br>（ハイフンは入れないでください。）</div>
         <textarea id="message2" rows="1" placeholder="入力してください"></textarea> <!-- メッセージ入力フィールド -->
 
         <div class="label">ご住所を教えてください。</div>
@@ -274,7 +274,7 @@
             <button type="button" id="sixdemand" onclick="selectdemand(this)">特になし</button>
         </div>
 
-        <div class="label">当店を知ったきっかけは何ですか？</div>
+        <div class="label">当店を知ったきっかけは何ですか？<br>（ご紹介を選択した方は）</div>
         <div class="chance-buttons">
             <button type="button" id="onechance" onclick="selectchance(this)">チラシ</button>
             <button type="button" id="twochance" onclick="selectchance(this)">ミニモ</button>
@@ -298,7 +298,7 @@
             <button type="button" id="sixIntroduction" onclick="selectIntroduction(this)">ゆびノさきネイルスクール</button>
         </div>
 
-        <div class="label">クーポンやお得な情報を配信してもよろしいでしょうか？</div>
+        <div class="label">近日で特別なイベントはありますか？</div>
         <div class="delivery-buttons">
             <button type="button" id="onedelivery" onclick="selectdelivery(this)">はい</button>
             <button type="button" id="twodelivery" onclick="selectdelivery(this)">いいえ</button>
@@ -342,7 +342,7 @@
         let deliveryCount = '';
         let gelnailsCount = '';
         let budgetyCount = '';
-        let menuCount = '';
+        let menuCount = [];
 
         // LIFF初期化
         document.addEventListener('DOMContentLoaded', function () {
@@ -371,103 +371,89 @@
         }
 
         function selectpriority(element) {
+            // 単一選択項目の処理コード
+            const buttons = document.querySelectorAll('.priority-buttons button');
+            buttons.forEach(button => button.classList.remove('active'));
 
-            document.getElementById('onepriority').classList.remove('active');
-            document.getElementById('twopriority').classList.remove('active');
-            document.getElementById('threepriority').classList.remove('active'); // 修正
-            document.getElementById('fourpriority').classList.remove('active');
-            document.getElementById('fivepriority').classList.remove('active');
-            document.getElementById('sixpriority').classList.remove('active');
-
+            // 選択されたボタンだけにactiveクラスを追加
             element.classList.add('active');
             priorityCount = element.innerText;
         }
 
         function selectdemand(element) {
+            // 単一選択項目の処理コード
+            const buttons = document.querySelectorAll('.demand-buttons button');
+            buttons.forEach(button => button.classList.remove('active'));
 
-            document.getElementById('onedemand').classList.remove('active');
-            document.getElementById('twodemand').classList.remove('active');
-            document.getElementById('threedemand').classList.remove('active'); // 修正
-            document.getElementById('fourdemand').classList.remove('active');
-            document.getElementById('fivedemand').classList.remove('active');
-            document.getElementById('sixdemand').classList.remove('active');
-
+            // 選択されたボタンだけにactiveクラスを追加
             element.classList.add('active');
             demandCount = element.innerText;
         }
 
         function selectchance(element) {
+            // 単一選択項目の処理コード
+            const buttons = document.querySelectorAll('.chance-buttons button');
+            buttons.forEach(button => button.classList.remove('active'));
 
-            document.getElementById('onechance').classList.remove('active');
-            document.getElementById('twochance').classList.remove('active');
-            document.getElementById('threechance').classList.remove('active'); // 修正
-            document.getElementById('fourchance').classList.remove('active');
-            document.getElementById('fivechance').classList.remove('active');
-            document.getElementById('sixchance').classList.remove('active');
-
+            // 選択されたボタンだけにactiveクラスを追加
             element.classList.add('active');
             chanceCount = element.innerText;
         }
 
         function selectIntroduction(element) {
+            // 単一選択項目の処理コード
+            const buttons = document.querySelectorAll('.Introduction-buttons button');
+            buttons.forEach(button => button.classList.remove('active'));
 
-            document.getElementById('oneIntroduction').classList.remove('active');
-            document.getElementById('twoIntroduction').classList.remove('active');
-            document.getElementById('threeIntroduction').classList.remove('active');
-            document.getElementById('fourIntroduction').classList.remove('active');
-            document.getElementById('fiveIntroduction').classList.remove('active');
-            document.getElementById('sixIntroduction').classList.remove('active');
-
+            // 選択されたボタンだけにactiveクラスを追加
             element.classList.add('active');
             IntroductionCount = element.innerText;
         }
 
         function selectdelivery(element) {
+            // 単一選択項目の処理コード
+            const buttons = document.querySelectorAll('.delivery-buttons button');
+            buttons.forEach(button => button.classList.remove('active'));
 
-            document.getElementById('onedelivery').classList.remove('active');
-            document.getElementById('twodelivery').classList.remove('active');
-
+            // 選択されたボタンだけにactiveクラスを追加
             element.classList.add('active');
             deliveryCount = element.innerText;
         }
 
         function selectgelnails(element) {
+            // 単一選択項目の処理コード
+            const buttons = document.querySelectorAll('.gelnails-buttons button');
+            buttons.forEach(button => button.classList.remove('active'));
 
-            document.getElementById('onegelnails').classList.remove('active');
-            document.getElementById('twogelnails').classList.remove('active');
-
+            // 選択されたボタンだけにactiveクラスを追加
             element.classList.add('active');
             gelnailsCount = element.innerText;
         }
 
         function selectbudgety(element) {
+            // 単一選択項目の処理コード
+            const buttons = document.querySelectorAll('.budgety-buttons button');
+            buttons.forEach(button => button.classList.remove('active'));
 
-            document.getElementById('onebudgety').classList.remove('active');
-            document.getElementById('twobudgety').classList.remove('active');
-            document.getElementById('threebudgety').classList.remove('active');
-            document.getElementById('fourbudgety').classList.remove('active');
-            document.getElementById('fivebudgety').classList.remove('active');
-
+            // 選択されたボタンだけにactiveクラスを追加
             element.classList.add('active');
             budgetyCount = element.innerText;
         }
 
         function selectmenu(element) {
+            // 複数選択項目の処理コード
+            const menuName = element.innerText;
 
-            document.getElementById('onemenu').classList.remove('active');
-            document.getElementById('twomenu').classList.remove('active');
-            document.getElementById('threemenu').classList.remove('active');
-            document.getElementById('fourmenu').classList.remove('active');
-            document.getElementById('fivemenu').classList.remove('active');
-            document.getElementById('sixmenu').classList.remove('active');
-            document.getElementById('sevenmenu').classList.remove('active');
-
-            element.classList.add('active');
-            menuCount = element.innerText;
+            if (element.classList.contains('active')) {
+                element.classList.remove('active');
+                menuCount = menuCount.filter(menu => menu !== menuName);
+            } else {
+                element.classList.add('active');
+                menuCount.push(menuName);
+            }
         }
 
         function submitForm() {
-            /* フォームの入力値を取得 */
             const message = document.getElementById('message').value;
             const message2 = document.getElementById('message2').value;
             const message3 = document.getElementById('message3').value;
@@ -482,7 +468,6 @@
             budgetyCount: budgetyCount;
             menuCount: menuCount;
 
-            /* フォームデータをオブジェクトにまとめる */
             const formData = {
                 message,
                 message2,
@@ -496,8 +481,86 @@
                 deliveryCount,
                 gelnailsCount,
                 budgetyCount,
-                menuCount
+                menuCount: menuCount.join('\n・') // 改行区切りにする
             };
+
+            // フォームデータのチェック
+            if (!formData.message) {
+                alert('お名前を入力してください。');
+                return;
+            }
+
+            // フォームデータのチェック
+            if (!formData.message2) {
+                alert('電話番号を入力してください。');
+                return;
+            }
+
+            // フォームデータのチェック
+            if (!formData.message3) {
+                alert('住所を入力してください。');
+                return;
+            }
+
+            // フォームデータのチェック
+            if (!formData.message4) {
+                alert('生年月日を入力してください。');
+                return;
+            }
+
+            // フォームデータのチェック
+            if (!formData.priorityCount) {
+                alert('サロンに求める最も優先度が高いものは何ですか？をご選択ください。');
+                return;
+            }
+
+            // フォームデータのチェック
+            if (!formData.demandCount) {
+                alert('サロンに求めるものをもう一つ教えてください。をご選択ください。');
+                return;
+            }
+
+            // フォームデータのチェック
+            if (!formData.chanceCount) {
+                alert('当店を知ったきっかけは何ですか？をご選択ください。');
+                return;
+            }
+
+            // フォームデータのチェック
+            if (!formData.message5) {
+                alert('ご紹介を選択された方はご紹介のお名前を教えてください。をご選択ください。');
+                return;
+            }
+
+            // フォームデータのチェック
+            if (!formData.IntroductionCount) {
+                alert('ご利用店舗を教えてくださいをご選択ください。');
+                return;
+            }
+
+            // フォームデータのチェック
+            if (!formData.deliveryCount) {
+                alert('近日で特別なイベントはありますか？をご選択ください。');
+                return;
+            }
+
+            // フォームデータのチェック
+            if (!formData.gelnailsCount) {
+                alert('ジェルネイルは初めてですか？をご選択ください。');
+                return;
+            }
+
+            // フォームデータのチェック
+            if (!formData.budgetyCount) {
+                alert('毎月のネイルにご予算はございますか？をご選択ください。');
+                return;
+            }
+
+            // フォームデータのチェック
+            if (!formData.menuCount) {
+                alert('気になるネイルメニューはございますか？をご選択ください。');
+                return;
+            }
 
             // LINEトークにメッセージを送信
             liff.sendMessages([{
