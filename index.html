@@ -242,16 +242,16 @@
     <div class="container">
         <h1>ゆびノさき<br>アンケート</h1>
         <div class="info-text">以下全て入力後<br>【アンケート送信】ボタンを押してください。</div>
-        <div class="label">お名前フルネームで教えてください<br>（例　大阪　太郎　おおさか　たろう）</div>
+        <div class="label">お名前フルネームで教えてください<br>（例、大阪　太郎　おおさか　たろう）</div>
         <textarea id="message" rows="1" placeholder="入力してください"></textarea> <!-- メッセージ入力フィールド -->
 
-        <div class="label">お電話を教えてください。<br>（ハイフンは入れないでください。）</div>
+        <div class="label">お電話を教えてください<br>（ハイフンは入れないでください。）</div>
         <textarea id="message2" rows="1" placeholder="入力してください"></textarea> <!-- メッセージ入力フィールド -->
 
-        <div class="label">ご住所を教えてください。</div>
+        <div class="label">ご住所を教えてください<br>（例、大阪府大阪市〇〇）</div>
         <textarea id="message3" rows="1" placeholder="入力してください"></textarea> <!-- メッセージ入力フィールド -->
 
-        <div class="label">生年月日（例　2000年1月1日）</div>
+        <div class="label">生年月日（例、2000年1月1日）</div>
         <textarea id="message4" rows="1" placeholder="入力してください"></textarea> <!-- メッセージ入力フィールド -->
 
         <div class="label">サロンに求める最も優先度が高いものは何ですか？</div>
@@ -285,7 +285,7 @@
             <button type="button" id="sevenchance" onclick="selectchance(this)">その他</button>
         </div>
 
-        <div class="label">ご紹介を選択された方はご紹介のお名前を教えてください。</div>
+        <div class="label">ご紹介を選択された方はご紹介のお名前を教えてください（任意）</div>
         <textarea id="message5" rows="1" placeholder="入力してください"></textarea> <!-- メッセージ入力フィールド -->
 
         <div class="label">ご利用店舗を教えてください！</div>
@@ -310,7 +310,7 @@
             <button type="button" id="twogelnails" onclick="selectgelnails(this)">いいえ</button>
         </div>
 
-        <div class="label">毎月のネイルにご予算はございますか？</div>
+        <div class="label">ご予算はございますか？</div>
         <div class="budgety-buttons">
             <button type="button" id="onebudgety" onclick="selectbudgety(this)">したい事ができるなら気にしない</button>
             <button type="button" id="twobudgety" onclick="selectbudgety(this)">～20,000円まで</button>
@@ -319,7 +319,7 @@
             <button type="button" id="fivebudgety" onclick="selectbudgety(this)">～8,000円まで</button>
         </div>
 
-        <div class="label">気になるネイルメニューはございますか？<br>（複数選択可能です。）</div>
+        <div class="label">気になるメニューはございますか？<br>（複数選択可能です。）</div>
         <div class="menu-buttons">
             <button type="button" id="onemenu" onclick="selectmenu(this)">角質ケア</button>
             <button type="button" id="twomenu" onclick="selectmenu(this)">巻き爪ケア</button>
@@ -523,12 +523,6 @@
             // フォームデータのチェック
             if (!formData.chanceCount) {
                 alert('当店を知ったきっかけは何ですか？をご選択ください。');
-                return;
-            }
-
-            // フォームデータのチェック
-            if (!formData.message5) {
-                alert('ご紹介を選択された方はご紹介のお名前を教えてください。をご選択ください。');
                 return;
             }
 
